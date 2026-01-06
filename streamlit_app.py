@@ -46,7 +46,7 @@ if ingredients_list:
 
         pd_df_nutrition = pd.DataFrame(smoothiefroot_response.json())
 
-        sf_df = st.dataframe(df[['nutrition']], use_container_width=True)
+        sf_df = st.dataframe(pd_df_nutrition[['nutrition']], use_container_width=True)
 
     my_insert_stmt = f"""insert into smoothies.public.orders(ingredients, name_on_order)
                      values('{ingredients_string}', '{name_on_order}')
